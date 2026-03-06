@@ -1,0 +1,892 @@
+/* ============================================================
+   Beebe–Hillman Archetypal Type Portraits
+   Shared Stylesheet — Dark Mode
+   ============================================================ */
+
+
+/* ==========================================================
+   1. RESET & BASE
+   ========================================================== */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  font-size: 19px;
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  background: var(--parchment);
+  color: var(--ink);
+  font-family: 'Crimson Pro', serif;
+  font-weight: 300;
+  line-height: 1.75;
+  overflow-x: hidden;
+  position: relative;
+}
+
+
+/* ==========================================================
+   2. CSS CUSTOM PROPERTIES
+   ========================================================== */
+
+:root {
+  /* Core palette (dark — Hillman) */
+  --ink: #f0f0f0;
+  --parchment: #0a0a0a;
+  --gold: #e84690;
+  --gold-light: #e84690;
+  --deep-blue: #9a9590;
+  --muted-rose: #e84690;
+  --sage: #8eaa8e;
+  --shadow: #ffffff;
+  --vellum: #111111;
+  --faded: #888888;
+
+  /* Light text for hero/governing-image dark sections */
+  --cream: #ffffff;
+
+  /* Spacing scale */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 3rem;
+  --space-xl: 4.5rem;
+  --space-2xl: 6rem;
+
+  /* Content width */
+  --content-width: 700px;
+  --content-narrow: 650px;
+}
+
+
+/* ==========================================================
+   3. TYPOGRAPHY
+   ========================================================== */
+
+h1, h2, h3, .section-number, .hero-label, .hero-scroll span {
+  font-family: 'Cinzel', serif;
+}
+
+p {
+  margin-bottom: 1.3rem;
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+strong {
+  font-weight: 500;
+  color: var(--shadow);
+}
+
+em {
+  font-style: italic;
+}
+
+a {
+  color: var(--gold);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--gold-light);
+}
+
+
+/* ==========================================================
+   4. GRAIN OVERLAY
+   ========================================================== */
+
+body::after {
+  content: '';
+  position: fixed;
+  top: -80%;
+  left: -80%;
+  width: 360%;
+  height: 360%;
+  background:
+    radial-gradient(ellipse at 25% 50%, rgba(40,80,200,0.15) 0%, transparent 45%),
+    radial-gradient(ellipse at 75% 25%, rgba(60,120,220,0.12) 0%, transparent 40%),
+    radial-gradient(ellipse at 50% 75%, rgba(30,70,180,0.13) 0%, transparent 50%);
+  animation: aurora 24s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+/* ==========================================================
+   5. LAYOUT
+   ========================================================== */
+
+.content {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 5rem var(--space-md) var(--space-2xl);
+  position: relative;
+  z-index: 1;
+}
+
+.section {
+  margin-bottom: var(--space-xl);
+}
+
+.section-number {
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.6rem;
+  display: block;
+}
+
+.section h2 {
+  font-size: clamp(1.6rem, 3.5vw, 2.1rem);
+  font-weight: 400;
+  line-height: 1.3;
+  margin-bottom: 1.8rem;
+  color: var(--shadow);
+  letter-spacing: 0.01em;
+}
+
+.section h2 em {
+  font-style: italic;
+  color: var(--muted-rose);
+}
+
+.section h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--shadow);
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.02em;
+}
+
+/* Divider */
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin: var(--space-xl) 0;
+  color: var(--gold);
+}
+
+.divider .line {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(232,70,144,0.5), transparent);
+}
+
+.divider .dot {
+  width: 5px;
+  height: 5px;
+  border: 1px solid rgba(232,70,144,0.5);
+  transform: rotate(45deg);
+}
+
+
+/* ==========================================================
+   6. HERO SECTION
+   ========================================================== */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 4rem var(--space-md);
+  position: relative;
+  background: rgba(10,10,10,0.85);
+  color: var(--cream);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse at 50% 40%, rgba(232,70,144,0.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* Back link (top-left of hero) */
+.hero-back {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(232,70,144,0.5);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.hero-back:hover {
+  color: var(--gold);
+}
+
+/* Sigil */
+.hero-sigil {
+  width: 80px;
+  height: 80px;
+  border: 1.5px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+  opacity: 0;
+  animation: fadeIn 2s ease 0.3s forwards;
+  position: relative;
+}
+
+.hero-sigil::after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border: 1px solid rgba(232,70,144,0.4);
+  border-radius: 50%;
+}
+
+.hero-sigil span {
+  font-family: 'Cinzel', serif;
+  font-size: 1.4rem;
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  color: var(--gold);
+}
+
+/* Label */
+.hero-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.2rem;
+  opacity: 0;
+  animation: fadeIn 2s ease 0.6s forwards;
+}
+
+/* Title */
+.hero h1 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  line-height: 1.25;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: fadeIn 2s ease 0.9s forwards;
+}
+
+.hero h1 em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--gold-light);
+}
+
+/* Subtitle */
+.hero-subtitle {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1.05rem;
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(224,219,211,0.65);
+  max-width: 520px;
+  opacity: 0;
+  animation: fadeIn 2s ease 1.2s forwards;
+}
+
+/* Scroll indicator */
+.hero-scroll {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+  opacity: 0;
+  animation: fadeIn 2s ease 2s forwards;
+}
+
+.hero-scroll span {
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(232,70,144,0.7);
+}
+
+.hero-scroll .line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+
+/* ==========================================================
+   7. FUNCTION STACK TABLE
+   ========================================================== */
+
+.stack-wrapper {
+  margin: 2.5rem 0;
+  overflow-x: auto;
+}
+
+.stack-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Crimson Pro', serif;
+}
+
+.stack-table thead th {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--faded);
+  text-align: left;
+  padding: 0 0.8rem 0.8rem;
+  border-bottom: 1px solid rgba(232,70,144,0.25);
+  font-weight: 400;
+}
+
+.stack-table tbody tr {
+  border-bottom: 1px solid rgba(224,219,211,0.08);
+  transition: background 0.3s ease;
+}
+
+.stack-table tbody tr:hover {
+  background: rgba(232,70,144,0.06);
+}
+
+.stack-table td {
+  padding: 0.7rem 0.8rem;
+  font-size: 0.92rem;
+  font-weight: 300;
+  vertical-align: top;
+}
+
+.stack-table .pos {
+  font-family: 'Cinzel', serif;
+  font-weight: 500;
+  color: var(--shadow);
+  white-space: nowrap;
+  min-width: 60px;
+}
+
+.stack-table .fn {
+  font-weight: 500;
+  color: var(--deep-blue);
+  white-space: nowrap;
+  min-width: 40px;
+}
+
+.stack-table .archetype {
+  font-style: italic;
+  color: var(--muted-rose);
+  white-space: nowrap;
+  min-width: 130px;
+}
+
+.stack-table .archetype a {
+  color: var(--muted-rose);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.stack-table .archetype a:hover {
+  color: var(--gold-light);
+}
+
+.shadow-row {
+  background: rgba(224,219,211,0.03);
+}
+
+.shadow-label {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted-rose);
+  padding: 0.5rem 0.8rem;
+  border-top: 1px solid rgba(232,70,144,0.2);
+  width: 100%;
+  background: transparent;
+}
+
+
+/* ==========================================================
+   8. BLOCKQUOTES
+   ========================================================== */
+
+blockquote {
+  margin: 2rem 0;
+  padding: 1.2rem 1.5rem;
+  border-left: 2px solid var(--gold);
+  background: rgba(232,70,144,0.06);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--shadow);
+}
+
+blockquote cite {
+  display: block;
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+  font-style: normal;
+  color: var(--faded);
+  letter-spacing: 0.05em;
+}
+
+
+/* ==========================================================
+   9. GOVERNING IMAGE (Final dark section)
+   ========================================================== */
+
+.governing-image {
+  background: rgba(10,10,10,0.85);
+  color: var(--cream);
+  padding: 5rem var(--space-md);
+  margin-top: var(--space-lg);
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.governing-image .inner {
+  max-width: var(--content-narrow);
+  margin: 0 auto;
+}
+
+.governing-image .section-number {
+  color: var(--gold);
+}
+
+.governing-image h2 {
+  color: var(--cream);
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1.6rem, 3.5vw, 2.1rem);
+  font-weight: 300;
+  margin-bottom: 2rem;
+  letter-spacing: 0.03em;
+}
+
+.governing-image h2 em {
+  color: var(--gold-light);
+}
+
+.governing-image p {
+  text-align: left;
+  color: rgba(224,219,211,0.88);
+  font-weight: 300;
+}
+
+.governing-image blockquote {
+  border-left-color: rgba(232,70,144,0.5);
+  background: rgba(232,70,144,0.07);
+  color: #e8e2d8;
+  text-align: left;
+}
+
+.governing-image blockquote cite {
+  color: rgba(224,219,211,0.5);
+}
+
+
+/* ==========================================================
+   10. FOOTER
+   ========================================================== */
+
+
+/* ==========================================================
+   10b. PREV / NEXT TYPE NAVIGATION
+   ========================================================== */
+
+.type-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-md) var(--space-sm);
+  position: relative;
+  z-index: 1;
+}
+
+.type-nav a {
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(232,70,144,0.5);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  max-width: 45%;
+}
+
+.type-nav a:hover {
+  color: var(--gold);
+}
+
+.type-nav .next {
+  text-align: right;
+  margin-left: auto;
+}
+
+
+/* ==========================================================
+   11. ANIMATIONS
+   ========================================================== */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes aurora {
+  0% {
+    transform: translate(0%, 0%) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translate(5%, -3%) rotate(2.5deg) scale(1.03);
+  }
+  50% {
+    transform: translate(-3%, 5%) rotate(-1.5deg) scale(0.98);
+  }
+  75% {
+    transform: translate(3%, 2%) rotate(1deg) scale(1.02);
+  }
+  100% {
+    transform: translate(-2%, -3%) rotate(-1deg) scale(1);
+  }
+}
+
+
+/* ==========================================================
+   12. RESPONSIVE (≤600px)
+   ========================================================== */
+
+@media (max-width: 600px) {
+  html {
+    font-size: 18px;
+  }
+
+  .content {
+    padding: 3rem 1.4rem 4rem;
+  }
+
+  .hero {
+    padding: 3rem 1.5rem;
+    min-height: 90vh;
+  }
+
+  .hero h1 {
+    font-size: 1.9rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .hero-back {
+    top: 1.2rem;
+    left: 1.2rem;
+    font-size: 0.7rem;
+  }
+
+  .section {
+    margin-bottom: 3.5rem;
+  }
+
+  .section h2 {
+    font-size: 1.5rem;
+  }
+
+  .section h3 {
+    font-size: 1.15rem;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  blockquote {
+    padding: 1rem 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  .stack-wrapper {
+    margin: 1.8rem -0.5rem;
+  }
+
+  .stack-table {
+    font-size: 0.85rem;
+  }
+
+  .stack-table td {
+    padding: 0.5rem 0.5rem;
+  }
+
+  .governing-image {
+    padding: 3.5rem 1.5rem;
+  }
+
+  .governing-image p {
+    font-size: 1rem;
+  }
+
+  .divider {
+    margin: 3rem 0;
+  }
+
+  .type-nav {
+    padding: var(--space-md) 1.4rem var(--space-xs);
+  }
+
+  .type-nav a {
+    font-size: 0.7rem;
+  }
+
+  /* Homepage */
+  .index-hero .divider {
+    margin: 0.75rem 0 0.25rem;
+  }
+
+  .index-list {
+    padding: 0 1rem;
+  }
+
+  .index-list a {
+    padding: 0.8rem 0;
+    gap: 0 0.5rem;
+    line-height: 1.3;
+  }
+
+  .index-list .type-image {
+    padding-left: 4rem;
+    margin-top: 0;
+  }
+}
+
+
+/* ==========================================================
+   13. HOMEPAGE-SPECIFIC
+   ========================================================== */
+
+.index-hero {
+  min-height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 4rem var(--space-md) 1.5rem;
+  position: relative;
+  background: rgba(10,10,10,0.85);
+  color: var(--cream);
+}
+
+.index-hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse at 50% 40%, rgba(232,70,144,0.05) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.index-phi {
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  color: var(--gold-light);
+  margin-bottom: 0.3rem;
+  opacity: 0;
+  animation: fadeIn 2s ease forwards;
+}
+
+.index-hero h1 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  line-height: 1.3;
+  opacity: 0;
+  animation: fadeIn 2s ease 0.3s forwards;
+}
+
+.index-hero h1 em {
+  font-weight: 400;
+  color: var(--gold-light);
+}
+
+.index-hero .index-subtitle {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(224,219,211,0.55);
+  margin-top: 1rem;
+  opacity: 0;
+  animation: fadeIn 2s ease 0.8s forwards;
+}
+
+.index-hero .divider {
+  margin: 1.25rem 0 0.5rem;
+}
+
+.index-hero + .divider {
+  margin: 1.5rem 0;
+}
+
+.index-description {
+  max-width: var(--content-width);
+  margin-top: 2rem;
+  text-align: left;
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  font-weight: 300;
+  line-height: 1.85;
+  color: rgba(224,219,211,0.7);
+  opacity: 0;
+  animation: fadeIn 2s ease 1s forwards;
+}
+
+.index-description p + p {
+  margin-top: 1rem;
+}
+
+.index-description em {
+  color: rgba(224,219,211,0.85);
+}
+
+.index-archetype-link {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  border: 1px solid rgba(232,70,144,0.35);
+  padding: 0.7em 1.8em;
+  margin-top: 2rem;
+  transition: border-color 0.3s ease, background 0.3s ease;
+  opacity: 0;
+  animation: fadeIn 2s ease 1.4s forwards;
+}
+
+.index-archetype-link:hover {
+  border-color: var(--gold-light);
+  background: rgba(232,70,144,0.08);
+}
+
+.index-list {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 1.5rem var(--space-md) var(--space-2xl);
+  list-style: none;
+  position: relative;
+  z-index: 1;
+}
+
+.index-list a {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 1rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid rgba(224,219,211,0.06);
+  text-decoration: none;
+  color: var(--ink);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.index-list a:hover {
+  background: rgba(232,70,144,0.04);
+}
+
+.index-list .type-code {
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  min-width: 4rem;
+  flex-shrink: 0;
+}
+
+.index-list .type-title {
+  flex: 1;
+  min-width: 0;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: var(--shadow);
+}
+
+.index-list .type-image {
+  width: 100%;
+  padding-left: 5rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--faded);
+  margin-top: -0.1rem;
+}
+
+.index-list-heading {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1.3rem, 3vw, 1.7rem);
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  color: var(--shadow);
+  text-align: center;
+  padding-bottom: 0.6rem;
+}
+
+.index-list-subheading {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--faded);
+  text-align: center;
+  padding-bottom: 0.8rem;
+}
+
+.index-group-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--faded);
+  padding-top: var(--space-lg);
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid rgba(232,70,144,0.15);
+}
+
+.index-group-label:first-child {
+  padding-top: 0;
+}
