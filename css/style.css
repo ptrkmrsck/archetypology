@@ -11,7 +11,7 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 html {
-  font-size: 19px;
+  font-size: 16px;
   scroll-behavior: smooth;
   color-scheme: dark;
 }
@@ -19,7 +19,7 @@ html {
 body {
   background: var(--parchment);
   color: var(--ink);
-  font-family: 'Crimson Pro', serif;
+  font-family: 'Times New Roman', Times, serif;
   font-weight: 300;
   line-height: 1.75;
   overflow-x: hidden;
@@ -35,10 +35,10 @@ body {
   /* Core palette (dark — Hillman) */
   --ink: #f0f0f0;
   --parchment: #0a0a0a;
-  --gold: #e84690;
-  --gold-light: #e84690;
+  --gold: #ff2d8a;
+  --gold-light: #ff2d8a;
   --deep-blue: #9a9590;
-  --muted-rose: #e84690;
+  --muted-rose: #ff2d8a;
   --sage: #8eaa8e;
   --shadow: #ffffff;
   --vellum: #111111;
@@ -66,7 +66,8 @@ body {
    ========================================================== */
 
 h1, h2, h3, .section-number, .hero-label, .hero-scroll span {
-  font-family: 'Cinzel', serif;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 300;
 }
 
 p {
@@ -147,7 +148,7 @@ body::after {
 
 .section h2 {
   font-size: clamp(1.6rem, 3.5vw, 2.1rem);
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.3;
   margin-bottom: 1.8rem;
   color: var(--shadow);
@@ -160,9 +161,9 @@ body::after {
 }
 
 .section h3 {
-  font-family: 'Cinzel', serif;
+  font-family: 'Times New Roman', Times, serif;
   font-size: 1.25rem;
-  font-weight: 500;
+  font-weight: 300;
   color: var(--shadow);
   margin-top: 2.5rem;
   margin-bottom: 1rem;
@@ -182,13 +183,13 @@ body::after {
 .divider .line {
   width: 60px;
   height: 1px;
-  background: linear-gradient(to right, transparent, rgba(232,70,144,0.5), transparent);
+  background: linear-gradient(to right, transparent, rgba(255,45,138,0.5), transparent);
 }
 
 .divider .dot {
   width: 5px;
   height: 5px;
-  border: 1px solid rgba(232,70,144,0.5);
+  border: 1px solid rgba(255,45,138,0.5);
   transform: rotate(45deg);
 }
 
@@ -214,7 +215,7 @@ body::after {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: radial-gradient(ellipse at 50% 40%, rgba(232,70,144,0.06) 0%, transparent 60%);
+  background: radial-gradient(ellipse at 50% 40%, rgba(255,45,138,0.06) 0%, transparent 60%);
   pointer-events: none;
 }
 
@@ -223,11 +224,11 @@ body::after {
   position: absolute;
   top: 2rem;
   left: 2rem;
-  font-family: 'Cinzel', serif;
+  font-family: 'Times New Roman', Times, serif;
   font-size: 0.75rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(232,70,144,0.5);
+  color: rgba(255,45,138,0.5);
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -256,12 +257,12 @@ body::after {
   position: absolute;
   width: 60px;
   height: 60px;
-  border: 1px solid rgba(232,70,144,0.4);
+  border: 1px solid rgba(255,45,138,0.4);
   border-radius: 50%;
 }
 
 .hero-sigil span {
-  font-family: 'Cinzel', serif;
+  font-family: 'Times New Roman', Times, serif;
   font-size: 1.4rem;
   font-weight: 300;
   letter-spacing: 0.15em;
@@ -270,7 +271,7 @@ body::after {
 
 /* Label */
 .hero-label {
-  font-family: 'Cinzel', serif;
+  font-family: 'Times New Roman', Times, serif;
   font-size: 0.85rem;
   letter-spacing: 0.35em;
   text-transform: uppercase;
@@ -282,7 +283,7 @@ body::after {
 
 /* Title */
 .hero h1 {
-  font-family: 'Cinzel', serif;
+  font-family: 'Times New Roman', Times, serif;
   font-size: clamp(2.4rem, 5vw, 3.8rem);
   font-weight: 300;
   letter-spacing: 0.04em;
@@ -294,13 +295,13 @@ body::after {
 
 .hero h1 em {
   font-style: italic;
-  font-weight: 400;
+  font-weight: 300;
   color: var(--gold-light);
 }
 
 /* Subtitle */
 .hero-subtitle {
-  font-family: 'Crimson Pro', serif;
+  font-family: 'Times New Roman', Times, serif;
   font-size: 1.05rem;
   font-weight: 300;
   font-style: italic;
@@ -328,7 +329,7 @@ body::after {
   font-size: 0.7rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: rgba(232,70,144,0.7);
+  color: rgba(255,45,138,0.7);
 }
 
 .hero-scroll .line {
@@ -351,19 +352,19 @@ body::after {
 .stack-table {
   width: 100%;
   border-collapse: collapse;
-  font-family: 'Crimson Pro', serif;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .stack-table thead th {
-  font-family: 'Cinzel', serif;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 200;
   font-size: 0.7rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--faded);
   text-align: left;
   padding: 0 0.8rem 0.8rem;
-  border-bottom: 1px solid rgba(232,70,144,0.25);
-  font-weight: 400;
+  border-bottom: 1px solid rgba(255,45,138,0.25);
 }
 
 .stack-table tbody tr {
@@ -372,7 +373,7 @@ body::after {
 }
 
 .stack-table tbody tr:hover {
-  background: rgba(232,70,144,0.06);
+  background: rgba(255,45,138,0.06);
 }
 
 .stack-table td {
@@ -383,25 +384,23 @@ body::after {
 }
 
 .stack-table .pos {
-  font-family: 'Cinzel', serif;
-  font-weight: 500;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 200;
   color: var(--shadow);
   white-space: nowrap;
-  min-width: 60px;
 }
 
 .stack-table .fn {
-  font-weight: 500;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 200;
   color: var(--deep-blue);
   white-space: nowrap;
-  min-width: 40px;
 }
 
 .stack-table .archetype {
   font-style: italic;
   color: var(--muted-rose);
   white-space: nowrap;
-  min-width: 130px;
 }
 
 .stack-table .archetype a {
@@ -414,19 +413,52 @@ body::after {
   color: var(--gold-light);
 }
 
+.stack-table tr:has(.shadow-label) {
+  border-bottom: none;
+}
+
+.stack-table tr:has(.shadow-label) td {
+  padding: 0;
+}
+
+/* Progressive descent — ego functions fade, shadow functions glow */
+.stack-table tbody tr { --depth: 0; }
+.stack-table tbody tr:nth-child(2) { --depth: 1; }
+.stack-table tbody tr:nth-child(3) { --depth: 2; }
+.stack-table tbody tr:nth-child(4) { --depth: 3; }
+/* shadow-label row is nth-child(5) */
+.shadow-row:nth-child(6) { --depth: 4; }
+.shadow-row:nth-child(7) { --depth: 5; }
+.shadow-row:nth-child(8) { --depth: 6; }
+.shadow-row:nth-child(9) { --depth: 7; }
+
+.stack-table tbody tr .pos,
+.stack-table tbody tr .fn {
+  opacity: calc(0.95 - var(--depth) * 0.08);
+}
+
+.stack-table tbody tr .archetype,
+.stack-table tbody tr .archetype a {
+  color: color-mix(in oklch, #ff2d8a calc(100% - var(--depth) * 8%), #3b4cc0);
+  text-shadow:
+    0 0 5px rgba(255,45,138, calc(var(--depth) * 0.05)),
+    0 0 18px rgba(59,76,192, calc(var(--depth) * 0.03));
+}
+
 .shadow-row {
-  background: rgba(224,219,211,0.03);
+  background: rgba(255,45,138,0.015);
 }
 
 .shadow-label {
-  display: inline-block;
-  font-family: 'Cinzel', serif;
+  display: block;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 200;
   font-size: 0.65rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--muted-rose);
-  padding: 0.5rem 0.8rem;
-  border-top: 1px solid rgba(232,70,144,0.2);
+  padding: 1.2rem 0 0.5rem;
+  border-top: 1px solid rgba(255,45,138,0.25);
   width: 100%;
   background: transparent;
 }
@@ -440,7 +472,7 @@ blockquote {
   margin: 2rem 0;
   padding: 1.2rem 1.5rem;
   border-left: 2px solid var(--gold);
-  background: rgba(232,70,144,0.06);
+  background: rgba(255,45,138,0.06);
   font-style: italic;
   font-weight: 300;
   color: var(--shadow);
@@ -481,7 +513,7 @@ blockquote cite {
 
 .governing-image h2 {
   color: var(--cream);
-  font-family: 'Cinzel', serif;
+  font-family: 'Times New Roman', Times, serif;
   font-size: clamp(1.6rem, 3.5vw, 2.1rem);
   font-weight: 300;
   margin-bottom: 2rem;
@@ -499,8 +531,8 @@ blockquote cite {
 }
 
 .governing-image blockquote {
-  border-left-color: rgba(232,70,144,0.5);
-  background: rgba(232,70,144,0.07);
+  border-left-color: rgba(255,45,138,0.5);
+  background: rgba(255,45,138,0.07);
   color: #e8e2d8;
   text-align: left;
 }
@@ -531,11 +563,12 @@ blockquote cite {
 }
 
 .type-nav a {
-  font-family: 'Cinzel', serif;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 200;
   font-size: 0.78rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(232,70,144,0.5);
+  color: rgba(255,45,138,0.5);
   text-decoration: none;
   transition: color 0.3s ease;
   max-width: 45%;
@@ -646,8 +679,13 @@ blockquote cite {
     font-size: 0.85rem;
   }
 
+  .stack-table thead th {
+    letter-spacing: 0.12em;
+    padding: 0 0.4rem 0.6rem;
+  }
+
   .stack-table td {
-    padding: 0.5rem 0.5rem;
+    padding: 0.5rem 0.4rem;
   }
 
   .governing-image {
@@ -713,7 +751,7 @@ blockquote cite {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: radial-gradient(ellipse at 50% 40%, rgba(232,70,144,0.05) 0%, transparent 60%);
+  background: radial-gradient(ellipse at 50% 40%, rgba(255,45,138,0.05) 0%, transparent 60%);
   pointer-events: none;
 }
 
@@ -726,7 +764,7 @@ blockquote cite {
 }
 
 .index-hero h1 {
-  font-family: 'Cinzel', serif;
+  font-family: 'Times New Roman', Times, serif;
   font-size: clamp(1.8rem, 4vw, 2.8rem);
   font-weight: 300;
   letter-spacing: 0.06em;
@@ -736,12 +774,16 @@ blockquote cite {
 }
 
 .index-hero h1 em {
-  font-weight: 400;
+  font-weight: 300;
+  color: var(--gold-light);
+}
+
+.index-hero h1 .arche {
   color: var(--gold-light);
 }
 
 .index-hero .index-subtitle {
-  font-family: 'Crimson Pro', serif;
+  font-family: 'Times New Roman', Times, serif;
   font-size: 1rem;
   font-weight: 300;
   font-style: italic;
@@ -763,7 +805,7 @@ blockquote cite {
   max-width: var(--content-width);
   margin-top: 2rem;
   text-align: left;
-  font-family: 'Crimson Pro', serif;
+  font-family: 'Times New Roman', Times, serif;
   font-size: 0.88rem;
   font-weight: 300;
   line-height: 1.85;
@@ -782,12 +824,13 @@ blockquote cite {
 
 .index-archetype-link {
   display: inline-block;
-  font-family: 'Cinzel', serif;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 200;
   font-size: 0.75rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--gold-light);
-  border: 1px solid rgba(232,70,144,0.35);
+  border: 1px solid rgba(255,45,138,0.35);
   padding: 0.7em 1.8em;
   margin-top: 2rem;
   transition: border-color 0.3s ease, background 0.3s ease;
@@ -797,7 +840,7 @@ blockquote cite {
 
 .index-archetype-link:hover {
   border-color: var(--gold-light);
-  background: rgba(232,70,144,0.08);
+  background: rgba(255,45,138,0.08);
 }
 
 .index-list {
@@ -822,13 +865,13 @@ blockquote cite {
 }
 
 .index-list a:hover {
-  background: rgba(232,70,144,0.04);
+  background: rgba(255,45,138,0.04);
 }
 
 .index-list .type-code {
-  font-family: 'Cinzel', serif;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 200;
   font-size: 0.8rem;
-  font-weight: 500;
   letter-spacing: 0.2em;
   color: var(--gold);
   min-width: 4rem;
@@ -838,7 +881,7 @@ blockquote cite {
 .index-list .type-title {
   flex: 1;
   min-width: 0;
-  font-family: 'Crimson Pro', serif;
+  font-family: 'Times New Roman', Times, serif;
   font-size: 1.1rem;
   font-weight: 300;
   color: var(--shadow);
@@ -847,7 +890,7 @@ blockquote cite {
 .index-list .type-image {
   width: 100%;
   padding-left: 5rem;
-  font-family: 'Crimson Pro', serif;
+  font-family: 'Times New Roman', Times, serif;
   font-size: 0.88rem;
   font-weight: 300;
   font-style: italic;
@@ -856,7 +899,7 @@ blockquote cite {
 }
 
 .index-list-heading {
-  font-family: 'Cinzel', serif;
+  font-family: 'Times New Roman', Times, serif;
   font-size: clamp(1.3rem, 3vw, 1.7rem);
   font-weight: 300;
   letter-spacing: 0.04em;
@@ -866,7 +909,7 @@ blockquote cite {
 }
 
 .index-list-subheading {
-  font-family: 'Crimson Pro', serif;
+  font-family: 'Times New Roman', Times, serif;
   font-size: 0.88rem;
   font-weight: 300;
   font-style: italic;
@@ -876,17 +919,349 @@ blockquote cite {
 }
 
 .index-group-label {
-  font-family: 'Cinzel', serif;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 200;
   font-size: 0.7rem;
-  font-weight: 400;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--faded);
   padding-top: var(--space-lg);
   padding-bottom: 0.4rem;
-  border-bottom: 1px solid rgba(232,70,144,0.15);
+  border-bottom: 1px solid rgba(255,45,138,0.15);
 }
 
 .index-group-label:first-child {
   padding-top: 0;
+}
+
+.index-archetype-link + .index-archetype-link {
+  margin-top: 0.8rem;
+  animation-delay: 1.6s;
+}
+
+
+/* ==========================================================
+   14. QUIZ
+   ========================================================== */
+
+.quiz-begin-wrap {
+  text-align: center;
+  margin-top: var(--space-md);
+}
+
+.quiz-begin-btn {
+  cursor: pointer;
+  background: transparent;
+}
+
+/* Progress dots */
+.quiz-progress {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: var(--space-lg);
+}
+
+.quiz-dot {
+  width: 8px;
+  height: 8px;
+  border: 1px solid rgba(255,45,138,0.3);
+  transform: rotate(45deg);
+  transition: all 0.3s ease;
+}
+
+.quiz-dot.done {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+.quiz-dot.current {
+  border-color: var(--gold);
+  box-shadow: 0 0 8px rgba(255,45,138,0.4);
+}
+
+/* Phase label */
+.quiz-phase-label {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 200;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.8rem;
+}
+
+/* Question text */
+.quiz-question-text {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: clamp(1.3rem, 3vw, 1.7rem);
+  font-weight: 300;
+  color: var(--shadow);
+  line-height: 1.4;
+  margin-bottom: var(--space-md);
+}
+
+.quiz-question-subtext {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--ash);
+  line-height: 1.5;
+  margin-top: -0.5rem;
+  margin-bottom: var(--space-md);
+}
+
+/* Options */
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.quiz-option {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: rgba(255,45,138,0.04);
+  border: none;
+  border-left: 2px solid rgba(255,45,138,0.3);
+  padding: 1.2rem 1.5rem;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--ink);
+  cursor: pointer;
+  transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease, opacity 0.4s ease;
+}
+
+.quiz-option:hover:not(:disabled) {
+  border-left-color: var(--gold);
+  background: rgba(255,45,138,0.08);
+  box-shadow: 0 0 20px rgba(255,45,138,0.06);
+}
+
+.quiz-option.selected {
+  border-left-color: var(--gold);
+  background: rgba(255,45,138,0.1);
+}
+
+.quiz-option.unselected {
+  opacity: 0.3;
+}
+
+.quiz-option:disabled {
+  cursor: default;
+}
+
+/* Explanation */
+.quiz-explanation {
+  margin-top: var(--space-sm);
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 0.88rem;
+  font-style: italic;
+  color: var(--faded);
+  line-height: 1.6;
+}
+
+/* Continue button */
+.quiz-continue {
+  display: block;
+  margin: var(--space-sm) auto 0;
+  padding: 0.6rem 2rem;
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.quiz-continue:hover,
+.quiz-continue:focus {
+  background: var(--gold);
+  color: var(--bg);
+  outline: none;
+}
+
+/* Close-result advisory */
+.quiz-close-result {
+  text-align: center;
+  margin-bottom: var(--space-md);
+  font-family: 'Times New Roman', Times, serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--gold);
+  line-height: 1.6;
+}
+
+/* Results */
+.quiz-results {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+.quiz-result-heading {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  font-weight: 300;
+  color: var(--shadow);
+  text-align: center;
+  margin-bottom: var(--space-md);
+}
+
+.quiz-result-heading em {
+  font-style: italic;
+  color: var(--muted-rose);
+}
+
+.quiz-reasoning {
+  margin-bottom: var(--space-lg);
+}
+
+.quiz-reasoning p {
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+.quiz-section-label {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 200;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--faded);
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid rgba(255,45,138,0.15);
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-sm);
+}
+
+/* Match links */
+.quiz-matches {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.quiz-match {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid rgba(224,219,211,0.06);
+  text-decoration: none;
+  color: var(--ink);
+  transition: background 0.2s ease;
+}
+
+.quiz-match:hover {
+  background: rgba(255,45,138,0.04);
+}
+
+.quiz-match-primary {
+  border-bottom-color: rgba(255,45,138,0.15);
+}
+
+.quiz-match-code {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 200;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  min-width: 4rem;
+}
+
+.quiz-match-title {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--shadow);
+}
+
+/* Links & caveat */
+.quiz-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  margin-top: var(--space-lg);
+}
+
+.quiz-links .index-archetype-link {
+  opacity: 1;
+  animation: none;
+}
+
+.quiz-caveat {
+  margin-top: var(--space-lg);
+  padding: 1.2rem 1.5rem;
+  border-left: 2px solid rgba(255,45,138,0.2);
+  background: rgba(255,45,138,0.03);
+}
+
+.quiz-caveat p {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--faded);
+  line-height: 1.7;
+}
+
+/* Copy link button */
+.quiz-copy-link {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 0.8rem;
+  font-weight: 200;
+  letter-spacing: 0.1em;
+  color: var(--faded);
+  background: none;
+  border: 1px solid rgba(224,219,211,0.15);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.quiz-copy-link:hover {
+  color: var(--gold);
+  border-color: rgba(255,45,138,0.3);
+}
+
+/* Retake link */
+.quiz-retake {
+  text-align: center;
+  margin-top: var(--space-xl);
+  padding-top: var(--space-md);
+  border-top: 1px solid rgba(224,219,211,0.06);
+}
+
+.quiz-retake a {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 0.8rem;
+  font-weight: 200;
+  letter-spacing: 0.1em;
+  color: var(--faded);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.quiz-retake a:hover {
+  color: var(--gold);
+}
+
+/* Quiz mobile adjustments */
+@media (max-width: 600px) {
+  .quiz-option {
+    padding: 1rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .quiz-question-text {
+    font-size: 1.2rem;
+  }
 }
