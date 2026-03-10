@@ -756,7 +756,7 @@
 
         closeAdvisory +
 
-        '<h3 class="quiz-section-label">The Eight-Function Stack</h3>' +
+        '<h3 class="quiz-section-label">Your Archetypal Map</h3>' +
         '<div class="stack-wrapper">' +
           '<table class="stack-table">' +
             '<thead><tr><th>Position</th><th>Function</th><th>Archetype</th></tr></thead>' +

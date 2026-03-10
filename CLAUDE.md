@@ -76,3 +76,15 @@ The voice is **declarative, dense, and mythologically alive**. It reads like a d
 - Section numbers are uppercase Roman numerals in `<span class="section-number">`
 - The governing image (Section VIII) uses `<section class="governing-image"><div class="inner">` and lives outside `<main>`
 - SVG phi icon is inlined in `.hero-back`, not an external file
+
+## Quiz Debug URLs
+
+Results can be loaded directly via `quiz/index.html#r=` followed by 14 digits (one per question, each digit is the chosen option index). Sample URLs for testing results pages:
+
+```
+ENTP  quiz/index.html#r=01011000010100
+INFJ  quiz/index.html#r=01010110100110
+INTJ  quiz/index.html#r=01010110010100
+ISFP  quiz/index.html#r=10100011110110
+ESTJ  quiz/index.html#r=10101001001001
+```

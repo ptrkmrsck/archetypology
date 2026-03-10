@@ -1131,12 +1131,11 @@ blockquote cite {
 .quiz-section-label {
   font-family: 'Times New Roman', Times, serif;
   font-weight: 200;
-  font-size: 0.7rem;
-  letter-spacing: 0.25em;
+  font-size: 1rem;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--faded);
-  padding-bottom: 0.6rem;
-  border-bottom: 1px solid rgba(255,45,138,0.15);
+  color: var(--muted-rose);
+  border-bottom: none;
   margin-top: var(--space-lg);
   margin-bottom: var(--space-sm);
 }
