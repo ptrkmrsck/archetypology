@@ -205,22 +205,22 @@
         {
           text: 'Brainstorming sessions where one idea leads to seven: tangents, hypotheticals, unexpected connections across seemingly unrelated domains.',
           scores: { Ne: 3 },
-          explanation: 'If divergent exploration energizes you, extraverted intuition may be near the top of your archetypal positions.'
+          explanation: 'If divergent exploration energizes you, extraverted intuition may occupy a leading archetypal position.'
         },
         {
           text: 'Deep contemplation where scattered data collapses into a singular insight: the moment when you suddenly see where everything is converging.',
           scores: { Ni: 3 },
-          explanation: 'If convergent insight energizes you, introverted intuition may be near the top of your archetypal positions.'
+          explanation: 'If convergent insight energizes you, introverted intuition may occupy a leading archetypal position.'
         },
         {
           text: 'Direct physical engagement: sports, hands-on work, navigating real-world environments with full sensory awareness and responsive precision.',
           scores: { Se: 3 },
-          explanation: 'If sensory immersion energizes you, extraverted sensation may be near the top of your archetypal positions.'
+          explanation: 'If sensory immersion energizes you, extraverted sensation may occupy a leading archetypal position.'
         },
         {
           text: 'Revisiting and refining what you know: organizing accumulated experience, applying tested methods, bringing depth and detail to familiar territory.',
           scores: { Si: 3 },
-          explanation: 'If building on proven experience energizes you, introverted sensation may be near the top of your archetypal positions.'
+          explanation: 'If building on proven experience energizes you, introverted sensation may occupy a leading archetypal position.'
         }
       ]
     },
