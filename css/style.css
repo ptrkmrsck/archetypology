@@ -585,7 +585,69 @@ blockquote cite {
 
 
 /* ==========================================================
-   11. ANIMATIONS
+   11. RELATED TYPES
+   ========================================================== */
+
+.related-types {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 var(--space-md) var(--space-md);
+  position: relative;
+  z-index: 1;
+}
+
+.related-types-inner {
+  border-top: 1px solid rgba(255,45,138,0.18);
+  padding-top: var(--space-md);
+}
+
+.related-types-heading {
+  display: block;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--faded);
+  margin-bottom: var(--space-sm);
+}
+
+.related-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 2.5rem;
+}
+
+.related-item dt {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--faded);
+  margin-bottom: 0.15rem;
+}
+
+.related-item dd {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 0.88rem;
+  font-weight: 300;
+  color: rgba(240,240,240,0.75);
+  margin-left: 0;
+}
+
+.related-item dd a {
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  font-weight: 300;
+}
+
+.related-item dd a:hover {
+  text-decoration: underline;
+}
+
+
+/* ==========================================================
+   12. ANIMATIONS
    ========================================================== */
 
 @keyframes fadeIn {
@@ -706,6 +768,10 @@ blockquote cite {
 
   .type-nav a {
     font-size: 0.7rem;
+  }
+
+  .related-list {
+    grid-template-columns: 1fr;
   }
 
   /* Homepage */
