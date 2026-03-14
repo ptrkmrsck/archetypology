@@ -14,6 +14,7 @@ quiz/quiz.js            Quiz logic, scoring, and all question data
 ```
 
 All type pages share the same DOM skeleton:
+
 1. Hero section with dominant function sigil (e.g., `<span>Ni</span>`)
 2. Section I: Eight Archetypal Positions table + prose on each position
 3. Section II: Governing Deity (mythological figure for the dominant)
@@ -30,14 +31,15 @@ Dividers (`div.divider > span.line + span.dot + span.line`) separate every major
 
 ## Theoretical Framework
 
-**John Beebe** extended Jung's four-function model to eight. Every type uses all eight cognitive functions, each in an archetypal role: Hero (1st), Good Parent (2nd), Eternal Child (3rd), Anima/Animus (4th), then four shadow positions: Opposing Personality (5th), Senex/Witch (6th), Trickster (7th), Daimon/Demon (8th). Shadow functions mirror conscious ones: the 5th opposes the 1st, the 6th shadows the 2nd, etc. What matters is the *relational tension* between positions, not just the ordering.
+**John Beebe** extended Jung's four-function model to eight. Every type uses all eight cognitive functions, each in an archetypal role: Hero (1st), Good Parent (2nd), Eternal Child (3rd), Anima/Animus (4th), then four shadow positions: Opposing Personality (5th), Senex/Witch (6th), Trickster (7th), Daimon/Demon (8th). Shadow functions mirror conscious ones: the 5th opposes the 1st, the 6th shadows the 2nd, etc. What matters is the _relational tension_ between positions, not just the ordering.
 
 **James Hillman** provides the depth lens. His archetypal psychology is polytheistic: the psyche is not a single ego integrating parts but a parliament of autonomous figures, each with legitimate claims. Key Hillman moves this site relies on:
-- The inferior function is not a weakness to develop but a *god to honor*. It is chthonic, it belongs to the underworld.
-- Shadow functions are *persons to meet*, not problems to solve. Personification over integration.
+
+- The inferior function is not a weakness to develop but a _god to honor_. It is chthonic, it belongs to the underworld.
+- Shadow functions are _persons to meet_, not problems to solve. Personification over integration.
 - The spirit/soul distinction: spirit moves upward (abstraction, transcendence, clarity); soul moves downward (depth, body, ambiguity, the particular). Most types default to spirit. Soul-making happens in the descent.
 - Pathology is the soul's voice. Symptoms are not failures but visitations, the neglected god making itself known.
-- The daimon (from *The Soul's Code*): each person carries an acorn-image, a soul's intention that may work against the ego's comfort.
+- The daimon (from _The Soul's Code_): each person carries an acorn-image, a soul's intention that may work against the ego's comfort.
 - Hillman's ideas are paraphrased and woven into prose. Do not attribute paraphrases as quotations. All blockquotes on the site are verified exact quotations; any new blockquote must also be verified exact wording from a real source.
 
 ## Writing Voice
@@ -49,7 +51,7 @@ The voice is **declarative, dense, and mythologically alive**. It reads like a d
 - Write in flowing paragraphs. No bullet points in portrait prose.
 - Use commas and semicolons to build long, muscular sentences. Colons to introduce.
 - Treat mythological figures as real presences with agency, not decorative metaphors. "Cassandra whispers," not "this is like Cassandra."
-- Use `<em>` for psychological emphasis on key phrases. Use `<strong>` when *introducing* a named concept for the first time.
+- Use `<em>` for psychological emphasis on key phrases. Use `<strong>` when _introducing_ a named concept for the first time.
 - Address the type in third person: "The INFJ's soul-image is..." not "Your soul-image is..."
 - Use Jungian vocabulary without apology: chthonic, ego-syntonic, numinous, individuation, psychopomp. Trust the reader.
 - Let the metaphor carry the argument. "The fire is useless in the sky" is better than explaining what that means.
@@ -83,33 +85,33 @@ The voice is **declarative, dense, and mythologically alive**. It reads like a d
 
 Each type page has a compact "Related Types" apparatus showing four structurally meaningful relationships within the Beebe model:
 
-| Label | Definition |
-|-------|-----------|
-| **Functional Twin** | E↔I flip: same 4 conscious functions, opposite dominant orientation. Description: `same four functions, [introverted/extraverted] polarity` |
-| **Shadow Pair** | Their conscious stack (1–4) = your shadow stack (5–8). Description: `their conscious stack is your shadow` |
-| **Dominant Sibling** | Same Hero function, different Good Parent. Description: `shared [Fn]-Hero, [X] rather than [Y]` |
-| **Soul Mirror** | Their stack is yours reversed; their Hero = your Inferior. Description: `their Hero is your Inferior` |
+| Label                | Definition                                                                                                                                  |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Functional Twin**  | E↔I flip: same 4 conscious functions, opposite dominant orientation. Description: `same four functions, [introverted/extraverted] polarity` |
+| **Shadow Pair**      | Their conscious stack (1–4) = your shadow stack (5–8). Description: `their conscious stack is your shadow`                                  |
+| **Dominant Sibling** | Same Hero function, different Good Parent. Description: `shared [Fn]-Hero, [X] rather than [Y]`                                             |
+| **Soul Mirror**      | Their stack is yours reversed; their Hero = your Inferior. Description: `their Hero is your Inferior`                                       |
 
 Complete data:
 
-| Type | Functional Twin | Shadow Pair | Dominant Sibling | Soul Mirror |
-|------|----------------|-------------|-----------------|-------------|
-| ENFJ | INFJ | INFP | ESFJ (Fe, Si not Ni) | ISTP |
-| ENFP | INFP | INFJ | ENTP (Ne, Ti not Fi) | ISTJ |
-| ENTJ | INTJ | INTP | ESTJ (Te, Si not Ni) | ISFP |
-| ENTP | INTP | INTJ | ENFP (Ne, Fi not Ti) | ISFJ |
-| ESFJ | ISFJ | ISFP | ENFJ (Fe, Ni not Si) | INTP |
-| ESFP | ISFP | ISFJ | ESTP (Se, Ti not Fi) | INTJ |
-| ESTJ | ISTJ | ISTP | ENTJ (Te, Ni not Si) | INFP |
-| ESTP | ISTP | ISTJ | ESFP (Se, Fi not Ti) | INFJ |
-| INFJ | ENFJ | ENFP | INTJ (Ni, Te not Fe) | ESTP |
-| INFP | ENFP | ENFJ | ISFP (Fi, Se not Ne) | ESTJ |
-| INTJ | ENTJ | ENTP | INFJ (Ni, Fe not Te) | ESFP |
-| INTP | ENTP | ENTJ | ISTP (Ti, Se not Ne) | ESFJ |
-| ISFJ | ESFJ | ESFP | ISTJ (Si, Te not Fe) | ENTP |
-| ISFP | ESFP | ESFJ | INFP (Fi, Ne not Se) | ENTJ |
-| ISTJ | ESTJ | ESTP | ISFJ (Si, Fe not Te) | ENFP |
-| ISTP | ESTP | ESTJ | INTP (Ti, Ne not Se) | ENFJ |
+| Type | Functional Twin | Shadow Pair | Dominant Sibling     | Soul Mirror |
+| ---- | --------------- | ----------- | -------------------- | ----------- |
+| ENFJ | INFJ            | INFP        | ESFJ (Fe, Si not Ni) | ISTP        |
+| ENFP | INFP            | INFJ        | ENTP (Ne, Ti not Fi) | ISTJ        |
+| ENTJ | INTJ            | INTP        | ESTJ (Te, Si not Ni) | ISFP        |
+| ENTP | INTP            | INTJ        | ENFP (Ne, Fi not Ti) | ISFJ        |
+| ESFJ | ISFJ            | ISFP        | ENFJ (Fe, Ni not Si) | INTP        |
+| ESFP | ISFP            | ISFJ        | ESTP (Se, Ti not Fi) | INTJ        |
+| ESTJ | ISTJ            | ISTP        | ENTJ (Te, Ni not Si) | INFP        |
+| ESTP | ISTP            | ISTJ        | ESFP (Se, Fi not Ti) | INFJ        |
+| INFJ | ENFJ            | ENFP        | INTJ (Ni, Te not Fe) | ESTP        |
+| INFP | ENFP            | ENFJ        | ISFP (Fi, Se not Ne) | ESTJ        |
+| INTJ | ENTJ            | ENTP        | INFJ (Ni, Fe not Te) | ESFP        |
+| INTP | ENTP            | ENTJ        | ISTP (Ti, Se not Ne) | ESFJ        |
+| ISFJ | ESFJ            | ESFP        | ISTJ (Si, Te not Fe) | ENTP        |
+| ISFP | ESFP            | ESFJ        | INFP (Fi, Ne not Se) | ENTJ        |
+| ISTJ | ESTJ            | ESTP        | ISFJ (Si, Fe not Te) | ENFP        |
+| ISTP | ESTP            | ESTJ        | INTP (Ti, Ne not Se) | ENFJ        |
 
 ## Quiz Debug URLs
 
