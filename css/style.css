@@ -383,22 +383,17 @@ body::after {
   vertical-align: top;
 }
 
-.stack-table .pos {
-  font-family: 'Times New Roman', Times, serif;
-  font-weight: 200;
-  color: var(--shadow);
-  white-space: nowrap;
-}
-
 .stack-table .fn {
   font-family: 'Times New Roman', Times, serif;
   font-weight: 200;
-  color: var(--deep-blue);
+  font-size: 0.82rem;
+  color: var(--shadow);
   white-space: nowrap;
 }
 
 .stack-table .archetype {
   font-style: italic;
+  font-size: 0.82rem;
   color: var(--muted-rose);
   white-space: nowrap;
 }
@@ -432,7 +427,6 @@ body::after {
 .shadow-row:nth-child(8) { --depth: 6; }
 .shadow-row:nth-child(9) { --depth: 7; }
 
-.stack-table tbody tr .pos,
 .stack-table tbody tr .fn {
   opacity: calc(0.95 - var(--depth) * 0.08);
 }

@@ -15,7 +15,7 @@ quiz/quiz.js            Quiz logic, scoring, and all question data
 
 All type pages share the same DOM skeleton:
 1. Hero section with dominant function sigil (e.g., `<span>Ni</span>`)
-2. Section I: Eight-Function Stack table + prose on each position
+2. Section I: Eight Archetypal Positions table + prose on each position
 3. Section II: Governing Deity (mythological figure for the dominant)
 4. Section III: Inferior Function as soul-longing
 5. Section IV: Demonic/Daimonic eighth function
