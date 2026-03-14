@@ -8,7 +8,7 @@ Depth-psychological portraits of the sixteen MBTI types through John Beebe's eig
 index.html              Homepage: intro prose + nav to all 16 types
 css/style.css           Single shared stylesheet (dark theme, serif, responsive)
 archetypes/index.html   Reference page for the 8 archetypal positions
-types/{type}/index.html 16 type portrait pages (~700 lines each, identical template)
+types/{type}/index.html 16 type portrait pages (~730 lines each, identical structure)
 quiz/index.html         Shell for interactive quiz
 quiz/quiz.js            Quiz logic, scoring, and all question data
 ```
@@ -23,7 +23,8 @@ All type pages share the same DOM skeleton:
 7. Section VI: Spirit and Soul tension
 8. Section VII: Synthesis
 9. Section VIII: Governing Image (in `.governing-image` dark section)
-10. `<nav class="type-nav">` with prev/next links
+10. `<section class="related-types">` with four cross-type links (see below)
+11. `<nav class="type-nav">` with prev/next links
 
 Dividers (`div.divider > span.line + span.dot + span.line`) separate every major section.
 
@@ -37,7 +38,7 @@ Dividers (`div.divider > span.line + span.dot + span.line`) separate every major
 - The spirit/soul distinction: spirit moves upward (abstraction, transcendence, clarity); soul moves downward (depth, body, ambiguity, the particular). Most types default to spirit. Soul-making happens in the descent.
 - Pathology is the soul's voice. Symptoms are not failures but visitations, the neglected god making itself known.
 - The daimon (from *The Soul's Code*): each person carries an acorn-image, a soul's intention that may work against the ego's comfort.
-- Quotes are paraphrased and attributed "After Hillman", not presented as direct quotations.
+- Hillman's ideas are paraphrased and woven into prose. Do not attribute paraphrases as quotations. All blockquotes on the site are verified exact quotations; any new blockquote must also be verified exact wording from a real source.
 
 ## Writing Voice
 
@@ -53,7 +54,7 @@ The voice is **declarative, dense, and mythologically alive**. It reads like a d
 - Use Jungian vocabulary without apology: chthonic, ego-syntonic, numinous, individuation, psychopomp. Trust the reader.
 - Let the metaphor carry the argument. "The fire is useless in the sky" is better than explaining what that means.
 - Each shadow function in Section V gets a mythological personification (Cassandra, Saturn, Loki, etc.) appropriate to that type's specific dynamics.
-- Blockquotes are "After Hillman" paraphrases, except the rare direct quote (e.g., Heraclitus).
+- All blockquotes on the site are verified exact quotations. Paraphrases of Hillman belong in prose, not set apart as quotations. Any new blockquote must be verified exact wording from a real source.
 
 ### Do Not
 
@@ -75,7 +76,40 @@ The voice is **declarative, dense, and mythologically alive**. It reads like a d
 - Shadow rows in the stack table use `class="shadow-row"` with a `shadow-label` divider row
 - Section numbers are uppercase Roman numerals in `<span class="section-number">`
 - The governing image (Section VIII) uses `<section class="governing-image"><div class="inner">` and lives outside `<main>`
+- The Related Types block uses `<section class="related-types"><div class="related-types-inner"><dl class="related-list">` with four `<div class="related-item">` entries, each a `<dt>` label + `<dd>` link. It lives outside `<main>`, between the governing image and `<nav class="type-nav">`.
 - SVG phi icon is inlined in `.hero-back`, not an external file
+
+## Related Types
+
+Each type page has a compact "Related Types" apparatus showing four structurally meaningful relationships within the Beebe model:
+
+| Label | Definition |
+|-------|-----------|
+| **Functional Twin** | E↔I flip: same 4 conscious functions, opposite dominant orientation. Description: `same four functions, [introverted/extraverted] polarity` |
+| **Shadow Pair** | Their conscious stack (1–4) = your shadow stack (5–8). Description: `their conscious stack is your shadow` |
+| **Dominant Sibling** | Same Hero function, different Good Parent. Description: `shared [Fn]-Hero, [X] rather than [Y]` |
+| **Soul Mirror** | Their stack is yours reversed; their Hero = your Inferior. Description: `their Hero is your Inferior` |
+
+Complete data:
+
+| Type | Functional Twin | Shadow Pair | Dominant Sibling | Soul Mirror |
+|------|----------------|-------------|-----------------|-------------|
+| ENFJ | INFJ | INFP | ESFJ (Fe, Si not Ni) | ISTP |
+| ENFP | INFP | INFJ | ENTP (Ne, Ti not Fi) | ISTJ |
+| ENTJ | INTJ | INTP | ESTJ (Te, Si not Ni) | ISFP |
+| ENTP | INTP | INTJ | ENFP (Ne, Fi not Ti) | ISFJ |
+| ESFJ | ISFJ | ISFP | ENFJ (Fe, Ni not Si) | INTP |
+| ESFP | ISFP | ISFJ | ESTP (Se, Ti not Fi) | INTJ |
+| ESTJ | ISTJ | ISTP | ENTJ (Te, Ni not Si) | INFP |
+| ESTP | ISTP | ISTJ | ESFP (Se, Fi not Ti) | INFJ |
+| INFJ | ENFJ | ENFP | INTJ (Ni, Te not Fe) | ESTP |
+| INFP | ENFP | ENFJ | ISFP (Fi, Se not Ne) | ESTJ |
+| INTJ | ENTJ | ENTP | INFJ (Ni, Fe not Te) | ESFP |
+| INTP | ENTP | ENTJ | ISTP (Ti, Se not Ne) | ESFJ |
+| ISFJ | ESFJ | ESFP | ISTJ (Si, Te not Fe) | ENTP |
+| ISFP | ESFP | ESFJ | INFP (Fi, Ne not Se) | ENTJ |
+| ISTJ | ESTJ | ESTP | ISFJ (Si, Fe not Te) | ENFP |
+| ISTP | ESTP | ESTJ | INTP (Ti, Ne not Se) | ENFJ |
 
 ## Quiz Debug URLs
 
