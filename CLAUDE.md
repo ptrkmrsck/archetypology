@@ -44,7 +44,7 @@ Dividers (`div.divider > span.line + span.dot + span.line`) separate every major
 
 ## Writing Voice
 
-The voice is **declarative, dense, and mythologically alive**. It reads like a depth-psychologist lecturing with conviction, not an encyclopedia hedging. Study the ENTP and INFJ pages as the gold standard.
+The voice is **declarative, dense, and mythologically alive**. It reads like a depth-psychologist lecturing with conviction, not an encyclopedia hedging. Refer to the writings of C.G. Jung, James Hillman, and John Beebe for stylistic reference.
 
 ### Do
 
