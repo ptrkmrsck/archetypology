@@ -399,74 +399,40 @@
     }
   };
 
-  // Q14: Auxiliary confirmation
-  const VALIDATION_AUX = {
-    Ne: {
-      phase: 4, phaseLabel: 'The Whole Pattern',
-      text: 'You lead with intuitive possibility. When you need to go deep, to anchor your exploration in something solid, which mode serves as your reliable second gear?',
-      options: [
-        { text: 'Internal logical coherence: an inner framework that must make sense on its own terms. Depth means structural clarity, precision, and independence from convention.', scores: { Ti: 2 }, explanation: 'Ne with Ti auxiliary points toward ENTP: the pattern that explores possibilities through the lens of internal logic.' },
-        { text: 'Personal values and authenticity: a felt sense of what matters, what is sacred, what you cannot betray. Depth means knowing what you stand for.', scores: { Fi: 2 }, explanation: 'Ne with Fi auxiliary points toward ENFP: the pattern that explores possibilities through the lens of personal meaning.' }
-      ]
-    },
-    Ni: {
-      phase: 4, phaseLabel: 'The Whole Pattern',
-      text: 'You lead with convergent vision. When you bring that vision outward, to serve others or shape the world, which mode is your reliable instrument?',
-      options: [
-        { text: 'External effectiveness and systems: organizing resources, creating measurable results, building structures that work. Your vision becomes architecture.', scores: { Te: 2 }, explanation: 'Ni with Te auxiliary points toward INTJ: the pattern that realizes vision through systematic external organization.' },
-        { text: 'Emotional attunement and connection: reading what others need, creating harmony, guiding the human dimension. Your vision becomes mentorship.', scores: { Fe: 2 }, explanation: 'Ni with Fe auxiliary points toward INFJ: the pattern that realizes vision through relational orchestration.' }
-      ]
-    },
-    Se: {
-      phase: 4, phaseLabel: 'The Whole Pattern',
-      text: 'You lead with sensory engagement. When you go beneath the surface of experience, which mode serves as your anchor?',
-      options: [
-        { text: 'Internal logical frameworks: understanding how things work, finding the structural principle beneath the surface. Your engagement becomes craft.', scores: { Ti: 2 }, explanation: 'Se with Ti auxiliary points toward ESTP: the pattern that engages the world through tactical logical precision.' },
-        { text: 'Personal values and aesthetic sensitivity: knowing what moves you, what is beautiful or meaningful. Your engagement becomes art.', scores: { Fi: 2 }, explanation: 'Se with Fi auxiliary points toward ESFP: the pattern that engages the world through personal aesthetic and moral sensitivity.' }
-      ]
-    },
-    Si: {
-      phase: 4, phaseLabel: 'The Whole Pattern',
-      text: 'You lead with experiential wisdom. When you bring that depth of knowledge outward, which mode is your reliable instrument?',
-      options: [
-        { text: 'External organization and systems: applying tested methods to create order, ensuring proven approaches are implemented effectively.', scores: { Te: 2 }, explanation: 'Si with Te auxiliary points toward ISTJ: the pattern that applies accumulated knowledge through systematic external organization.' },
-        { text: "Emotional care and communal service: tending to others' needs, preserving relational bonds, ensuring everyone is looked after.", scores: { Fe: 2 }, explanation: 'Si with Fe auxiliary points toward ISFJ: the pattern that applies accumulated knowledge through nurturing relational care.' }
-      ]
-    },
-    Te: {
-      phase: 4, phaseLabel: 'The Whole Pattern',
-      text: 'You lead with external organization. Behind your decisive outward action, which inner mode provides your strategic depth?',
-      options: [
-        { text: 'Convergent inner vision: an intuitive sense of where things are heading, a pattern that reveals itself before the evidence is complete.', scores: { Ni: 2 }, explanation: 'Te with Ni auxiliary points toward ENTJ: the pattern that organizes the world in service of a deep strategic vision.' },
-        { text: 'Accumulated inner experience: a detailed record of what has been tested and proven, the authority of reliable precedent.', scores: { Si: 2 }, explanation: 'Te with Si auxiliary points toward ESTJ: the pattern that organizes the world in service of proven experiential wisdom.' }
-      ]
-    },
-    Ti: {
-      phase: 4, phaseLabel: 'The Whole Pattern',
-      text: 'You lead with internal logic. When you engage the outer world to feed your frameworks, which mode of engagement comes most naturally?',
-      options: [
-        { text: 'Exploring possibilities and connections: brainstorming, tangenting across domains, gathering diverse inputs for the model to process.', scores: { Ne: 2 }, explanation: 'Ti with Ne auxiliary points toward INTP: the pattern that builds internal architectures from divergent exploratory input.' },
-        { text: 'Direct hands-on engagement: working with physical reality, troubleshooting concrete problems, gathering data through tactile contact.', scores: { Se: 2 }, explanation: 'Ti with Se auxiliary points toward ISTP: the pattern that builds internal architectures from direct sensory experience.' }
-      ]
-    },
-    Fe: {
-      phase: 4, phaseLabel: 'The Whole Pattern',
-      text: 'You lead with relational attunement. Behind your social orchestration, which inner mode provides your strategic depth?',
-      options: [
-        { text: 'Convergent inner vision: a sense of where relationships and groups are heading, reading the deeper meaning beneath social dynamics.', scores: { Ni: 2 }, explanation: 'Fe with Ni auxiliary points toward ENFJ: the pattern that orchestrates relationships in service of a deep transformative vision.' },
-        { text: 'Accumulated inner experience: detailed memory of what has worked in relationships before, the authority of proven caretaking.', scores: { Si: 2 }, explanation: 'Fe with Si auxiliary points toward ESFJ: the pattern that orchestrates relationships in service of proven communal wisdom.' }
-      ]
-    },
-    Fi: {
-      phase: 4, phaseLabel: 'The Whole Pattern',
-      text: 'You lead with inner values. When you engage the outer world beyond your moral compass, which mode of engagement comes most naturally?',
-      options: [
-        { text: 'Exploring possibilities and meanings: seeing what things could become, brainstorming, finding symbolic connections that resonate with your values.', scores: { Ne: 2 }, explanation: 'Fi with Ne auxiliary points toward INFP: the pattern that holds personal values open to a world of imaginative possibility.' },
-        { text: 'Direct sensory engagement: aesthetic immersion, physical expression, experiencing beauty and meaning through the body.', scores: { Se: 2 }, explanation: 'Fi with Se auxiliary points toward ISFP: the pattern that holds personal values open to the world through embodied aesthetic sensitivity.' }
-      ]
-    }
+  // Q14 compares the two Parent/Child pairings possible for each Hero.
+  const ROLE_EXAMPLES = {
+    Ti: { care: 'I help them find the assumption their decision turns on.', play: 'taking an argument apart to see whether it holds together' },
+    Fi: { care: 'I give them room to name what they would regret giving up.', play: 'trying on a character or a song to see what feels true to me' },
+    Fe: { care: 'I help them find words for the conversation they need to have.', play: 'getting a laugh and seeing who picks up the joke' },
+    Te: { care: 'I help them design a small test that will tell them what works.', play: 'turning a stray idea into a contest or a working prototype' },
+    Ne: { care: 'I offer another way to frame the choice, then see what possibilities open up.', play: 'following a far-fetched idea just to see where it goes' },
+    Ni: { care: 'I help them trace where their choices seem to be taking them.', play: 'letting an image unfold until a hidden theme comes into view' },
+    Se: { care: 'I try the next step alongside them so they can feel what it involves.', play: 'improvising with whatever is within reach' },
+    Si: { care: 'I recall a similar moment with them and ask what helped last time.', play: 'recreating a familiar ritual down to the little details' }
   };
 
+  // Keep option order stable for previously shared answer links.
+  const AUX_PAIRS = {
+    Ne: ['Ti', 'Fi'], Ni: ['Te', 'Fe'], Se: ['Ti', 'Fi'], Si: ['Te', 'Fe'],
+    Te: ['Ni', 'Si'], Ti: ['Ne', 'Se'], Fe: ['Ni', 'Si'], Fi: ['Ne', 'Se']
+  };
+
+  function auxiliaryQuestion(hero) {
+    return {
+      phase: 4, phaseLabel: 'The Whole Pattern',
+      text: 'A friend is stuck on a decision. Once you understand the problem, what help do you keep offering?',
+      subtext: 'Think of someone you know well. The second part of each answer describes what comes out when you can play.',
+      options: AUX_PAIRS[hero].map(function (parent) {
+        var child = INFERIOR_MAP[parent];
+        return {
+          text: ROLE_EXAMPLES[parent].care + ' On my own, I enjoy ' + ROLE_EXAMPLES[child].play + '.',
+          scores: { [parent]: 2 },
+          explanation: 'In this pairing, ' + FUNCTION_NAMES[parent] + ' takes the Good Parent role. ' +
+            FUNCTION_NAMES[child] + ' has the more playful freedom of the Eternal Child.'
+        };
+      })
+    };
+  }
 
   // ============================================================
   // STATE
@@ -568,36 +534,38 @@
   // ============================================================
 
   function renderProgress() {
-    var total = questions.length;
+    var total = QUESTIONS.length + 2; // Two final questions depend on the first twelve answers.
     var dots = '';
     for (var i = 0; i < total; i++) {
       var cls = i < currentIndex ? 'done' : i === currentIndex ? 'current' : '';
       dots += '<span class="quiz-dot ' + cls + '"></span>';
     }
-    return '<div class="quiz-progress">' + dots + '</div>';
+    return '<div class="quiz-progress" aria-hidden="true">' + dots + '</div>';
   }
 
   function renderQuestion(q) {
     var container = $('#quiz-container');
     container.innerHTML =
       renderProgress() +
-      '<div class="quiz-phase-label">' + q.phaseLabel + '</div>' +
-      '<h2 class="quiz-question-text">' + q.text + '</h2>' +
+      '<div class="quiz-phase-label">' + 'Question ' + (currentIndex + 1) + ' of ' + (QUESTIONS.length + 2) + ' · ' + q.phaseLabel + '</div>' +
+      '<h2 id="quiz-question" class="quiz-question-text">' + q.text + '</h2>' +
       (q.subtext ? '<p class="quiz-question-subtext">' + q.subtext + '</p>' : '') +
-      '<div class="quiz-options">' +
+      '<p class="quiz-instruction" id="quiz-instruction">Choose one answer.</p>' +
+      '<div class="quiz-options" role="radiogroup" aria-labelledby="quiz-question" aria-describedby="quiz-instruction">' +
         q.options.map(function (opt, i) {
-          return '<button class="quiz-option" data-index="' + i + '">' +
-                   opt.text +
-                 '</button>';
+          return '<label class="quiz-option">' +
+                   '<input type="radio" name="quiz-answer" value="' + i + '">' +
+                   '<span>' + opt.text + '</span>' +
+                 '</label>';
         }).join('') +
       '</div>' +
       '<div class="quiz-explanation" style="display: none"></div>';
 
     fadeIn(container);
 
-    container.querySelectorAll('.quiz-option').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        handleAnswer(q, parseInt(btn.dataset.index));
+    container.querySelectorAll('input[name="quiz-answer"]').forEach(function (input) {
+      input.addEventListener('change', function () {
+        handleAnswer(q, Number(input.value));
       });
     });
   }
@@ -629,17 +597,6 @@
     // Apply scores for new selection
     applyScores(q, opt, 1);
 
-    // Visual feedback: buttons stay enabled for re-selection
-    var buttons = document.querySelectorAll('.quiz-option');
-    buttons.forEach(function (btn, i) {
-      btn.classList.remove('selected', 'unselected');
-      if (i === optIndex) {
-        btn.classList.add('selected');
-      } else {
-        btn.classList.add('unselected');
-      }
-    });
-
     // Show explanation
     var expEl = $('.quiz-explanation');
     expEl.textContent = opt.explanation;
@@ -653,7 +610,6 @@
       continueBtn.textContent = 'Continue';
       continueBtn.addEventListener('click', function () { advance(); });
       expEl.parentNode.insertBefore(continueBtn, expEl.nextSibling);
-      setTimeout(function () { continueBtn.focus(); }, 100);
     }
   }
 
@@ -668,9 +624,7 @@
       if (VALIDATION_DOM[tentativeDominant]) {
         questions.push(VALIDATION_DOM[tentativeDominant]);
       }
-      if (VALIDATION_AUX[tentativeDominant]) {
-        questions.push(VALIDATION_AUX[tentativeDominant]);
-      }
+      questions.push(auxiliaryQuestion(tentativeDominant));
     }
 
     // Quiz complete
@@ -729,7 +683,11 @@
       closeAdvisory =
         '<div class="quiz-close-result">' +
           '<p>Your results were close between <strong>' + ranked[0].code + '</strong> and <strong>' + ranked[1].code + '</strong>. ' +
-          'Consider reading both portraits to see which resonates more deeply.</p>' +
+          (primary.stack[0] === ranked[1].stack[0]
+            ? 'Both lead with ' + dom + '. Compare what each Good Parent offers a friend: “' +
+              ROLE_EXAMPLES[aux].care + '” or “' + ROLE_EXAMPLES[ranked[1].stack[1]].care + '”'
+            : 'Think of a moment when you felt most like yourself. Which came first, ' +
+              FUNCTION_NAMES[dom] + ' or ' + FUNCTION_NAMES[ranked[1].stack[0]] + '?') + '</p>' +
         '</div>';
     }
 
@@ -746,12 +704,12 @@
         '<h2 class="quiz-result-heading">' + primary.code + ': <em>' + type.title + '</em></h2>' +
 
         '<div class="quiz-reasoning">' +
-          '<p>Your dominant function appears to be <strong>' + dom + '</strong> (' + FUNCTION_NAMES[dom] + '), ' +
-          'combined with <strong>' + aux + '</strong> (' + FUNCTION_NAMES[aux] + ') as auxiliary. ' +
-          'This places you in the ' + primary.code + ' pattern: ' + type.title + '.</p>' +
-          '<p>Your inferior function is <strong>' + inf + '</strong> (' + FUNCTION_NAMES[inf] + '), ' +
-          'which sits in the Anima/Animus position: the part of the psyche that is most ' +
-          'foreign to the ego, and yet most capable of initiating transformation.</p>' +
+          '<p>In the ' + primary.code + ' portrait, the Hero leads with <strong>' + FUNCTION_NAMES[dom] + '</strong>. ' +
+          'The Good Parent offers ' + FUNCTION_NAMES[aux] + '. Think of a time a friend depended on you. ' +
+          'Would they recognize this offer of help? “' + ROLE_EXAMPLES[aux].care + '”</p>' +
+          '<p>The Eternal Child finds pleasure in ' + ROLE_EXAMPLES[type.stack[2]].play + '. ' +
+          'The Anima/Animus carries <strong>' + FUNCTION_NAMES[inf] + '</strong>. ' +
+          'Consider when you long for someone else to bring that quality into your life, as well as when it feels difficult under stress.</p>' +
         '</div>' +
 
         closeAdvisory +
@@ -813,9 +771,7 @@
     if (VALIDATION_DOM[tentativeDominant]) {
       questions.push(VALIDATION_DOM[tentativeDominant]);
     }
-    if (VALIDATION_AUX[tentativeDominant]) {
-      questions.push(VALIDATION_AUX[tentativeDominant]);
-    }
+    questions.push(auxiliaryQuestion(tentativeDominant));
 
     // Replay validation questions
     for (var i = 12; i < answerStr.length && i < questions.length; i++) {

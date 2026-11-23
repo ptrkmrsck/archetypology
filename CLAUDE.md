@@ -6,7 +6,7 @@ Depth-psychological portraits of the sixteen MBTI types through John Beebe's eig
 
 ```
 index.html              Homepage: intro prose + nav to all 16 types
-css/style.css           Single shared stylesheet (dark theme, serif, responsive)
+css/style.css           Single shared stylesheet (paper palette, serif, responsive)
 archetypes/index.html   Reference page for the 8 archetypal positions
 types/{type}/index.html 16 type portrait pages (~730 lines each, identical structure)
 quiz/index.html         Shell for interactive quiz
@@ -15,7 +15,7 @@ quiz/quiz.js            Quiz logic, scoring, and all question data
 
 All type pages share the same DOM skeleton:
 
-1. Hero section with dominant function sigil (e.g., `<span>Ni</span>`)
+1. Shared masthead followed by the type code, dominant function, and portrait title
 2. Section I: Eight Archetypal Positions table + prose on each position
 3. Section II: Governing Deity (mythological figure for the dominant)
 4. Section III: Inferior Function as soul-longing
@@ -23,7 +23,7 @@ All type pages share the same DOM skeleton:
 6. Section V: Shadow Chorus (positions 5, 6, 7 as h3 subsections)
 7. Section VI: Spirit and Soul tension
 8. Section VII: Synthesis
-9. Section VIII: Governing Image (in `.governing-image` dark section)
+9. Section VIII: Governing Image (in the shaded `.governing-image` section)
 10. `<section class="related-types">` with four cross-type links (see below)
 11. `<nav class="type-nav">` with prev/next links
 
@@ -166,7 +166,7 @@ The voice on this site is not expository prose decorated with myth. It is **myth
 - Section numbers are uppercase Roman numerals in `<span class="section-number">`
 - The governing image (Section VIII) uses `<section class="governing-image"><div class="inner">` and lives outside `<main>`
 - The Related Types block uses `<section class="related-types"><div class="related-types-inner"><dl class="related-list">` with four `<div class="related-item">` entries, each a `<dt>` label + `<dd>` link. It lives outside `<main>`, between the governing image and `<nav class="type-nav">`.
-- SVG phi icon is inlined in `.hero-back`, not an external file
+- The masthead links to the portrait directory, archetype reference, and quiz
 
 ## Related Types
 
