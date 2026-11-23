@@ -534,36 +534,38 @@
   // ============================================================
 
   function renderProgress() {
-    var total = questions.length;
+    var total = QUESTIONS.length + 2; // Two final questions depend on the first twelve answers.
     var dots = '';
     for (var i = 0; i < total; i++) {
       var cls = i < currentIndex ? 'done' : i === currentIndex ? 'current' : '';
       dots += '<span class="quiz-dot ' + cls + '"></span>';
     }
-    return '<div class="quiz-progress">' + dots + '</div>';
+    return '<div class="quiz-progress" aria-hidden="true">' + dots + '</div>';
   }
 
   function renderQuestion(q) {
     var container = $('#quiz-container');
     container.innerHTML =
       renderProgress() +
-      '<div class="quiz-phase-label">' + q.phaseLabel + '</div>' +
-      '<h2 class="quiz-question-text">' + q.text + '</h2>' +
+      '<div class="quiz-phase-label">' + 'Question ' + (currentIndex + 1) + ' of ' + (QUESTIONS.length + 2) + ' · ' + q.phaseLabel + '</div>' +
+      '<h2 id="quiz-question" class="quiz-question-text">' + q.text + '</h2>' +
       (q.subtext ? '<p class="quiz-question-subtext">' + q.subtext + '</p>' : '') +
-      '<div class="quiz-options">' +
+      '<p class="quiz-instruction" id="quiz-instruction">Choose one answer.</p>' +
+      '<div class="quiz-options" role="radiogroup" aria-labelledby="quiz-question" aria-describedby="quiz-instruction">' +
         q.options.map(function (opt, i) {
-          return '<button class="quiz-option" data-index="' + i + '">' +
-                   opt.text +
-                 '</button>';
+          return '<label class="quiz-option">' +
+                   '<input type="radio" name="quiz-answer" value="' + i + '">' +
+                   '<span>' + opt.text + '</span>' +
+                 '</label>';
         }).join('') +
       '</div>' +
       '<div class="quiz-explanation" style="display: none"></div>';
 
     fadeIn(container);
 
-    container.querySelectorAll('.quiz-option').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        handleAnswer(q, parseInt(btn.dataset.index));
+    container.querySelectorAll('input[name="quiz-answer"]').forEach(function (input) {
+      input.addEventListener('change', function () {
+        handleAnswer(q, Number(input.value));
       });
     });
   }
@@ -595,17 +597,6 @@
     // Apply scores for new selection
     applyScores(q, opt, 1);
 
-    // Visual feedback: buttons stay enabled for re-selection
-    var buttons = document.querySelectorAll('.quiz-option');
-    buttons.forEach(function (btn, i) {
-      btn.classList.remove('selected', 'unselected');
-      if (i === optIndex) {
-        btn.classList.add('selected');
-      } else {
-        btn.classList.add('unselected');
-      }
-    });
-
     // Show explanation
     var expEl = $('.quiz-explanation');
     expEl.textContent = opt.explanation;
@@ -619,7 +610,6 @@
       continueBtn.textContent = 'Continue';
       continueBtn.addEventListener('click', function () { advance(); });
       expEl.parentNode.insertBefore(continueBtn, expEl.nextSibling);
-      setTimeout(function () { continueBtn.focus(); }, 100);
     }
   }
 
