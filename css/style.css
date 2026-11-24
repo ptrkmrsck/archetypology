@@ -8,6 +8,7 @@
   --wash: #f1f2ee;
   --accent: #d7e2ea;
   --font: Courier, monospace;
+  --prose: Charter, "Bitstream Charter", "Sitka Text", Georgia, serif;
   --mark: #000;
   --measure: 42rem;
   --page: 82rem;
@@ -18,7 +19,7 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font: 1.1875rem/1.6 var(--font);
+  font: 1rem/1.6 var(--font);
 }
 h1, h2, h3, p, blockquote, dl, dd { margin: 0; }
 h1, h2, h3 { font-family: var(--font); font-weight: 400; line-height: 1.13; text-wrap: balance; }
@@ -26,6 +27,7 @@ h1 { font-size: clamp(2.6rem, 5vw, 4.8rem); line-height: 1.05; }
 h2 { font-size: clamp(1.8rem, 3.5vw, 2.55rem); }
 h3 { font-size: 1.45rem; margin: 2em 0 .75em; }
 h1 em { font-style: normal; }
+p, blockquote, .quiz-explanation { font-family: var(--prose); }
 p + p, .section h2 + p, .governing-image h2 + p { margin-top: 1.2em; }
 a { color: var(--ink); text-underline-offset: .2em; }
 a:hover { text-decoration-thickness: 2px; }
@@ -53,7 +55,7 @@ button { font: inherit; cursor: pointer; }
 .masthead nav { display: flex; gap: clamp(.9rem, 3vw, 2.25rem); font: .9rem var(--font); }
 .directory-heading { display: grid; grid-template-columns: 1.3fr 1fr; align-items: end; gap: 2rem; padding: clamp(2rem, 4vw, 3.5rem) 0 2rem; }
 .directory-heading h1 { font-size: clamp(2rem, 5vw, 4rem); }
-.directory-heading p { max-width: 45ch; font: 1.05rem/1.45 var(--font); }
+.directory-heading p { max-width: 45ch; font: 1.05rem/1.45 var(--prose); }
 .function-group {
   display: grid;
   grid-template-columns: minmax(9rem, 20%) minmax(0, 1fr);
@@ -126,7 +128,11 @@ blockquote cite { display: block; font: .85rem/1.5 var(--font); margin-top: .6re
 .stack-table th, .stack-table td { text-align: left; padding: .65rem .5rem; border-bottom: 1px solid var(--rule); }
 .stack-table th, .shadow-label { font: 600 .76rem var(--font); color: var(--muted); }
 .stack-table th { border-top: 1px solid var(--ink); }
-.shadow-row { background: var(--wash); }
+/* Four ink densities, one for each shadow position. */
+.shadow-row { background-color: #f4f4f4; }
+.shadow-row:nth-child(2 of .shadow-row) { background-color: #ececec; }
+.shadow-row:nth-child(3 of .shadow-row) { background-color: #e4e4e4; }
+.shadow-row:nth-child(4 of .shadow-row) { background-color: #dcdcdc; }
 .governing-image { background: var(--ink); color: var(--paper); padding-block: 3rem; }
 .governing-image .section-number, .governing-image a { color: var(--accent); }
 .related-types-inner { padding-top: 2.5rem; }
@@ -183,7 +189,6 @@ blockquote cite { display: block; font: .85rem/1.5 var(--font); margin-top: .6re
   .type-title { grid-column: 2; }
 }
 @media (max-width: 42rem) {
-  body { font-size: 1rem; }
   .directory-heading { grid-template-columns: 1fr; gap: 1rem; }
   .function-group { grid-template-columns: 1fr; }
   .function-group h2 { padding: 0 0 .6rem; }
